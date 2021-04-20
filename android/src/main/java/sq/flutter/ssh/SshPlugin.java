@@ -245,6 +245,7 @@ public class SshPlugin implements MethodCallHandler, StreamHandler {
           Properties properties = new Properties();
           properties.setProperty("StrictHostKeyChecking", "no");
           session.setConfig(properties);
+          session.setTimeout(20000);
           session.connect();
 
           if (session.isConnected()) {
