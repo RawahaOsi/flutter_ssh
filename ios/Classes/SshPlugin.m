@@ -160,7 +160,7 @@
     if ([self isConnected:session result:result]) {
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSError* error = nil;
-        NSString* response = [session.channel execute:command error:&error timeout:@20];
+        NSString* response = [session.channel execute:command error:&error timeout:@50];
         if (error) {
           NSLog(@"Error executing command: %@", error);
           result([error flutterError]);
